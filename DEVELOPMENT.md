@@ -1,11 +1,3 @@
-# Developer Guide
-
-Before getting started, check out the [BentoML community forum](https://forum.modular.com/c/bento/31).
-
-If you are interested in contributing to existing issues and feature requests, check out the [good-first-issue](https://github.com/bentoml/BentoML/issues?q=is%3Aopen+is%3Aissue+label%3Agood-first-issue) and [help-wanted](https://github.com/bentoml/BentoML/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted) issues list.
-
-If you are interested in proposing a new feature, make sure to create a new feature request ticket [here](https://github.com/bentoml/BentoML/issues/new/choose) and share your proposal in the `#bentoml-contributors` slack channel for feedback.
-
 ## Start Developing
 
 <details><summary><h3>with the Command Line</h3></summary>
@@ -20,21 +12,20 @@ If you are interested in proposing a new feature, make sure to create a new feat
    developer experience. If you don't want to use `make` then please refer to
    the [Makefile](./Makefile) for specific commands on a given make target.
 
-2. Fork the BentoML project on [GitHub](https://github.com/bentoml/BentoML).
 
-3. Clone the source code from your fork of BentoML's GitHub repository:
+2. Clone the source code from your fork of BentoML's GitHub repository:
 
    ```bash
    git clone git@github.com:username/BentoML.git && cd BentoML
    ```
 
-4. Add the BentoML upstream remote to your local BentoML clone:
+3. Add the BentoML upstream remote to your local BentoML clone:
 
    ```bash
    git remote add upstream git@github.com:bentoml/BentoML.git
    ```
 
-5. Configure git to pull from the upstream remote:
+4. Configure git to pull from the upstream remote:
 
    ```bash
    git switch main # ensure you're on the main branch
@@ -42,7 +33,7 @@ If you are interested in proposing a new feature, make sure to create a new feat
    git branch --set-upstream-to=upstream/main
    ```
 
-6. Install BentoML in editable and all development dependencies:
+5. Install BentoML in editable and all development dependencies:
 
    ```bash
    pdm install -G all
@@ -56,7 +47,7 @@ If you are interested in proposing a new feature, make sure to create a new feat
    > **Note**: Make sure to prepend `pdm run` to all commands within this guide
    > if you are using isolated environment via `pdm`.
 
-7. Test the BentoML installation either with `bash`:
+6. Test the BentoML installation either with `bash`:
 
    ```bash
    bentoml --version
@@ -91,8 +82,7 @@ If you are interested in proposing a new feature, make sure to create a new feat
    1. Open the command palette and enter 'add remote'.
    2. Select 'Git: Add Remote'.
    3. Press enter to select 'Add remote' from GitHub.
-   4. Enter https://github.com/bentoml/BentoML.git to select the BentoML repository.
-   5. Name your remote 'upstream'.
+   4. Name your remote 'upstream'.
 
 5. Pull from the BentoML upstream remote to your main branch:
 
@@ -107,14 +97,7 @@ If you are interested in proposing a new feature, make sure to create a new feat
    ```bash
    python -m venv .venv
    ```
-7. Click yes if a popup suggests switching to the virtual environment. Otherwise, go through these steps:
-
-   1. Open any python file in the directory.
-   2. Select the interpreter selector on the blue status bar at the bottom of the editor.
-      ![vscode-status-bar](https://user-images.githubusercontent.com/489344/166984038-75f1f4bd-c896-43ee-a7ee-1b57fda359a3.png)
-
-   3. Switch to the path that includes .venv from the dropdown at the top.
-      ![vscode-select-venv](https://user-images.githubusercontent.com/489344/166984060-170d25f5-a91f-41d3-96f4-4db3c21df7c8.png)
+7. Click yes if a popup suggests switching to the virtual environment. 
 
 8. Update your PowerShell execution policies. Win+x followed by the 'a' key opens the admin Windows PowerShell. Enter the following command to allow the virtual environment activation script to run:
    ```
@@ -212,14 +195,6 @@ And/or use the `--verbose` option when running `bentoml` CLI command, e.g.:
 bentoml get IrisClassifier --verbose
 ```
 
-## Style check, auto-formatting, type-checking
-
-We are using [pre-commit](https://pre-commit.com/) to manage our hooks, and
-[buf](https://github.com/bufbuild/buf) for formatting and linting of our proto
-files. Configuration can be found [here](./src/bentoml/grpc/buf.yaml). Currently, we
-are running `buf` with docker, hence we kindly ask our developers to have docker
-available. Docker installation can be found
-[here](https://docs.docker.com/get-docker/).
 
 Run linter/format script:
 
@@ -252,30 +227,6 @@ Test out your changes in an actual BentoML model deployment, you can create a ne
 4. The new Bento will include a wheel file built from the BentoML source, and
    `bentoml containerize` will install it to override the default BentoML installation in base image
 
-### Distribute a custom BentoML release for your team
-
-If you want other team members to easily use your custom BentoML distribution, you may publish your
-branch to your fork of BentoML, and have your users install it this way:
-
-```bash
-pip install git+https://github.com/{YOUR_GITHUB_USERNAME}/bentoml@{YOUR_REVISION}
-```
-
-And in your BentoML projects' `bentofile.yaml`, force the Bento to install this distribution, e.g.:
-
-```yaml
-service: 'service:svc'
-description: 'file: ./README.md'
-include:
-  - '*.py'
-python:
-  packages:
-    - pandas
-    - git+https://github.com/{YOUR_GITHUB_USERNAME}/bentoml@{YOUR_REVISION}
-docker:
-  system_packages:
-    - git
-```
 
 ## Testing
 
@@ -296,18 +247,6 @@ To run all tests with PDM, do the following:
 ```bash
 pdm run nox
 ```
-
-### Adding new test suite
-
-If you are adding new ML framework support, it is recommended that you also add a separate test suite in our CI. Currently we are using GitHub Actions to manage our CI/CD workflow.
-
-We recommend using [`nektos/act`](https://github.com/nektos/act) to run and test Actions locally.
-
-Add a new job for your new framework under [framework.yml](./.github/workflows/frameworks.yml)
-
-## Python tools ecosystem
-
-Currently, BentoML is [PEP518](https://www.python.org/dev/peps/pep-0518/) compatible. We define package configuration via [`pyproject.toml`][https://github.com/bentoml/bentoml/blob/main/pyproject.toml].
 
 ## Benchmark
 
