@@ -1,5 +1,3 @@
-# See https://docs.readthedocs.io/en/stable/config-file/v2.html for more on.
-
 version: 2
 build:
   os: 'ubuntu-22.04'
