@@ -6,7 +6,7 @@ ci:
     - buf-format
     - buf-lint
 # skills/*/templates/ holds reviewed, e2e-tested script bundles that
-# generator skills copy verbatim — formatting churn the
+# generator skills copy — formatting churn the
 # byte-identical guarantee, so they are excluded from checks.
 # generated files that are not to be edited humans are also.
 exclude: '(.*\.(css|js|svg))|(.*/(snippets|grpc|proto)/.*)$|^skills/[^/]+/templates/'
