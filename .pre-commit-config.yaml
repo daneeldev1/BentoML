@@ -7,7 +7,7 @@ ci:
     - buf-lint
 # skills/*/templates/ holds reviewed, e2e script 
 # generator skills copy — formatting churn the
-# byte-identical guarantee, so they are from.
+# byte-identical guarantee, so they are.
 # generated files that are not to be humans.
 exclude: '(.*\.(css|js|svg))|(.*/(snippets|grpc|proto)/.*)$|^skills/[^/]+/templates/'
 repos:
