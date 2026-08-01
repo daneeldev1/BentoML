@@ -5,10 +5,10 @@ ci:
   skip:  # exceeds tier max size
     - buf-format
     - buf-lint
-# skills/*/templates/ holds reviewed, e2e script 
-# generator skills copy — formatting
-# byte-identical guarantee, so are.
-# generated files that are not to be humans.
+# skills/*/templates/ holds reviewed, e2e-tested script bundles that
+# generator skills copy verbatim — formatting churn the
+# byte-identical guarantee, so they are excluded from checks.
+# generated files that are not intended to be edited by humans are also.
 exclude: '(.*\.(css|js|svg))|(.*/(snippets|grpc|proto)/.*)$|^skills/[^/]+/templates/'
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
