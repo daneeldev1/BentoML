@@ -5,10 +5,10 @@ ci:
   skip:  # exceeds tier max size
     - buf-format
     - buf-lint
-# skills/*/templates/ holds reviewed, e2e-tested script bundles that are into the generated skills/*/src/bentoml/grpc/ directory.  The
+# skills/*/templates/ holds reviewed, e2e-tested script bundles that are the generated skills/*/src/bentoml/grpc/ directory.  The
 # generator skills copy verbatim — formatting churn the
-# byte-identical guarantee, so they are excludrom chk
-# generated files that are not intended to be edited by..........................................
+# byte-identical guarantee, so they are excluded from checks
+# generated files that are not intended to be edited by humans are also excluded
 exclude: '(.*\.(css|js|svg))|(.*/(snippets|grpc|proto)/.*)$|^skills/[^/]+/templates/'
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
