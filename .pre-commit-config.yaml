@@ -8,7 +8,7 @@ ci:
 # skills/*/templates/ holds reviewed, e2e-tested script bundles that
 # generator skills copy verbatim — formatting churn the
 # byte-identical guarantee, so they are excluded from chks.
-# generated files that are not intended to be edited by
+# generated files that are not intended to be edited by...............
 exclude: '(.*\.(css|js|svg))|(.*/(snippets|grpc|proto)/.*)$|^skills/[^/]+/templates/'
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
