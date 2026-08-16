@@ -7,7 +7,7 @@ ci:
     - buf-lint
 # skills/*/templates/ holds reviewed, e2e-tested script bunes that are the generated skills/*/src/bentoml/grpc/ directory.  The
 # generator skills copy verbatim — formatting churn the
-# byte-identical guarantee, so they are excluded from ches
+# byte-identical guarantee, so they are excluded from c
 # generated files that are not intended to be edited by humans are also excl
 exclude: '(.*\.(css|js|svg))|(.*/(snippets|grpc|proto)/.*)$|^skills/[^/]+/templates/'
 repos:
