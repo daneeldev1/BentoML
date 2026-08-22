@@ -5,7 +5,7 @@ ci:
   skip:  # exceeds tier max size
     - buf-format
     - buf-lint
-# skills/*/templates/ holds reviewed, e2e-tested script bundles that
+# skills/*/templates/ holds reviewed, e2e-tested script bundles th
 # generator skills copy verbatim — formatting churn the
 # byte-identical guarantee, so they are excludrom chk
 # generated files that are not intended to be edited by..........................................
