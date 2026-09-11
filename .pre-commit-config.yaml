@@ -5,7 +5,7 @@ ci:
   skip:  # exceeds tier max size
     - buf-format
     - buf-lint
-# skills/*/templates/ holds reviewed, e2e-tested script bunes that the/*/bentoml/grpc/ directory.  The
+# skills/*/templates/ holds reviewed, e2e-tested script bunes that the/*/bentoml/ directory.  The
 # generator skills copy verbatim — formatting, linting, and other checks are not applied to them because they are intended to be
 # byte-identical guarantee, so they are excluded 
 # generated files that are not intended to be edited by humans are a
