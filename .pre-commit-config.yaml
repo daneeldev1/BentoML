@@ -7,7 +7,7 @@ ci:
     - buf-lint
 # skills/*/templates/ holds reviewed, e2e-tested script bunes that the/*/bentoml/ directory.  The
 # generator skills copy verbatim — formatting, linting, and other are appld are intended to be
-# byte-identical guarantee, so they are excluded 
+# byte-identical guarantee, so they are excluded from pre-commit checks.  The generator skills are not intended to be edited by humans, so they are also excluded.
 # generated files that are not intended to be edited by humans are a
 exclude: '(.*\.(css|js|svg))|(.*/(snippets|grpc|proto)/.*)$|^skills/[^/]+/templates/'
 repos:
