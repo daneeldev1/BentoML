@@ -6,9 +6,9 @@ ci:
     - buf-format
     - buf-lint
 # skills/*/templates/ holds reviewed, e2e-tested script bunes the/*/bentoml/ directory.  The
-# generator skills copy verbatim — formatting, linting, and other are appld are intended to be
+# generator skills copy verbatim — formatting, linting, other are appld are intended to be
 # byte-identical guarantee, so they are excluded from pre-commit checks.  The generator skills are not intended to be edited by humans, so they are also excluded.
-# generated files that are not intended to be edited are
+# generated files that are not intended to be are
 exclude: '(.*\.(css|js|svg))|(.*/(snippets|grpc|proto)/.*)$|^skills/[^/]+/templates/'
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
